@@ -35,6 +35,15 @@ pipeline {
       }
     }
     
+    stage ("SonarQube Quality Check"){
+      steps {
+        script{
+          withSonarQubeEnv(credentialsId : 'Jenkins-Sonar-Token'){
+            waitForQualityGate abortPipeline: false, credentialsId : 'Jenkins-Sonar-Token'
+          }
+        }
+      }
+    }
+    
   }
-  
 }
