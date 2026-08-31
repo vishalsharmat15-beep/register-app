@@ -63,7 +63,6 @@ pipeline {
       }
     }
 
-bbopp hip hop 
     
   }
 }
