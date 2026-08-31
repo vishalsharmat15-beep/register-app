@@ -18,21 +18,25 @@ pipeline {
         cleanWs()
       }
     }
+    
     stage ("Checkout SCM"){
       steps {
         git branch: 'main', credentialsId: 'github', url: 'https://github.com/vishalsharmat15-beep/register-app.git'
       }
     }
+
     stage ("Build Application"){
       steps {
         sh "mvn clean package"
       }
     }
+
     stage ("Test Application"){
       steps {
         sh "mvn test"
       }
     }
+
     stage ("SonarQube Analysis"){
       steps {
         script{
@@ -78,6 +82,5 @@ pipeline {
     
 
 
-    }
   }
 }
