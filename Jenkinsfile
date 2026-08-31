@@ -4,6 +4,15 @@ pipeline {
     jdk 'Java21'
     maven 'Maven3'
   }
+  environment {
+    APP_NAME = "register-app"
+    RELEASE = "1.0.0"
+    DOCKER_USER = "vishalsharma09"
+    DOCKER_PASS = "DocketHub"
+    IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
+    IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
+    
+  }
   stages {
     stage ("Clean Workspace"){
       steps {
