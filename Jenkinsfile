@@ -89,6 +89,18 @@ pipeline {
           }
         }
 
+    stage("Trigger Deployment Job") {
+      steps {
+        script {
+          sh "curl -v -k \
+          --user clouduser:$JENKINS_API_TOKEN \
+          -X POST \
+          -H 'Content-Type: application/x-www-form-urlencoded' \
+          --data 'IMAGE_TAG=$IMAGE_TAG' \
+          'http://10.0.0.141:8080/job/GitOps-Register-App%20CD/buildWithParameters?token=gitops-token'"  
+        }
+      }
+    }
 
   }
 }
