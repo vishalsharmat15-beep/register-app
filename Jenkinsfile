@@ -98,7 +98,7 @@ pipeline {
                 -X POST \
                 -H 'Content-Type: application/x-www-form-urlencoded' \
                 --data 'IMAGE_TAG=${IMAGE_TAG}' \
-                'http://10.0.0.141:8080/job/GitOps-Register-App%20CD/buildWithParameters?token=gitops-token'"""        
+                'http://10.0.0.141:8080/job/Fashion-Signup-App%20CD/buildWithParameters?token=gitops-token'"""        
         }
       }
     }
