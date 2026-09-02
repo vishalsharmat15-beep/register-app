@@ -12,8 +12,8 @@
 
   <artifactId>webapp</artifactId>
   <packaging>war</packaging>
-  <name>Webapp</name>
-  <description>Webapp.</description>
+  <name>Fashion Signup App</name>
+  <description>Fashion storefront and user registration application.</description>
 
   <build>
     <finalName>${project.artifactId}</finalName>
@@ -27,6 +27,12 @@
   </build>
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.7.7</version>
+    </dependency>
 
     <dependency>
       <groupId>javax.servlet</groupId>

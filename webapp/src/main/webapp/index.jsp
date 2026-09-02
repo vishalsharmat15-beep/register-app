@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>XIVO | SEVENTEEN° SATELLITES™</title>
+	<title>Fashion Signup App | XIVO</title>
 	<link rel="stylesheet" href="css/style.css">
 	<style>
 		.image-hero { position: relative; min-height: 78vh; overflow: hidden; color: #fff; background: #222; }
@@ -27,7 +27,8 @@
 		.register-band input { color: #fff; border-bottom-color: #777; }
 		.register-band input:focus { background: #222; border-bottom-color: #fff; }
 		.register-band .brand-section .subtitle, .register-band .tagline, .register-band .terms-text, .register-band .signin-text { color: #bbb; }
-		.register-band .divider, .register-band .form-divider, .register-band .signin-section { border-color: #555; background-color: #555; }
+		.register-band .divider, .register-band .form-divider { background-color: #555; }
+		.register-band .signin-section { border-top-color: #555; background-color: transparent; display: flex; justify-content: center; text-align: center; }
 		.register-band .terms-text a, .register-band .signin-text a { color: #fff; border-color: #fff; }
 		@media (max-width: 700px) { .editorial { grid-template-columns: 1fr; } .editorial img { min-height: 420px; } .editorial-copy { min-height: 380px; } }
 	</style>
@@ -80,7 +81,7 @@
 
 		<section class="register-band" id="register">
 			<div class="registration-wrapper">
-				<form class="registration-form" action="action_page.php" method="post">
+				<form class="registration-form" action="api/register" method="post">
 					<div class="brand-section"><div class="subtitle">Private access</div><h1>Join XIVO</h1><div class="divider"></div><p class="tagline">Register for collection releases and studio notes.</p></div>
 					<div class="form-group"><label for="Name">Full Name</label><input type="text" id="Name" name="Name" placeholder="Enter your full name" required></div>
 					<div class="form-group"><label for="mobile">Mobile Number</label><input type="text" id="mobile" name="mobile" placeholder="Enter mobile number" required></div>
