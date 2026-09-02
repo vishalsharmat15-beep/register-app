@@ -12,4 +12,12 @@
     <servlet-name>RegisterServlet</servlet-name>
     <url-pattern>/api/register</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminUsersServlet</servlet-name>
+    <servlet-class>com.example.web.AdminUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminUsersServlet</servlet-name>
+    <url-pattern>/admin/users</url-pattern>
+  </servlet-mapping>
 </web-app>
