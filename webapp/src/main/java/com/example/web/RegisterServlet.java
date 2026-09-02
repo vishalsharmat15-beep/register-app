@@ -86,10 +86,14 @@ public class RegisterServlet extends HttpServlet {
         + Base64.getEncoder().encodeToString(hash);
   }
 
-  private void sendError(HttpServletResponse response, int status, String message) throws IOException {
-    response.setStatus(status);
-    response.setContentType("text/html;charset=UTF-8");
-    response.getWriter().write("<p>" + escapeHtml(message) + "</p><p><a href=\"../index.jsp#register\">Return to registration</a></p>");
+  private void sendError(HttpServletResponse response, int status, String message) {
+    try {
+      response.setStatus(status);
+      response.setContentType("text/html;charset=UTF-8");
+      response.getWriter().write("<p>" + escapeHtml(message) + "</p><p><a href=\"../index.jsp#register\">Return to registration</a></p>");
+    } catch (IOException exception) {
+      log("Unable to write registration error response", exception);
+    }
   }
 
   private String escapeHtml(String value) {
