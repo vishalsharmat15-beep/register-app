@@ -5,7 +5,7 @@ pipeline {
     maven 'Maven3'
   }
   environment {
-    APP_NAME = "register-app"
+    APP_NAME = "fashion-signup-app"
     RELEASE = "1.0.0"
     DOCKER_CREDENTIALS = credentials('DocketHub')
     IMAGE_NAME = "${DOCKER_CREDENTIALS_USR}/${APP_NAME}"
