@@ -1,270 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XIVO∅ - Premium Fashion Brand</title>
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>XIVO | SEVENTEEN° SATELLITES™</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.image-hero { position: relative; min-height: 78vh; overflow: hidden; color: #fff; background: #222; }
+		.image-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+		.image-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.42), rgba(0,0,0,.04)); }
+		.image-hero .hero-content { position: relative; z-index: 1; margin: 0 auto; padding: 18vh 24px 40px; max-width: 1200px; text-align: left; }
+		.image-hero h1 { font-size: clamp(42px, 7vw, 92px); letter-spacing: 12px; }
+		.image-hero p { color: #fff; max-width: 360px; }
+		.editorial { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+		.editorial img { width: 100%; height: 100%; min-height: 560px; object-fit: cover; }
+		.editorial-copy { display: flex; flex-direction: column; justify-content: center; padding: 70px 10%; background: #f1eee9; }
+		.editorial-copy h2 { font-size: clamp(32px, 4vw, 58px); font-weight: 300; letter-spacing: 5px; margin-bottom: 20px; }
+		.editorial-copy p { color: #555; max-width: 360px; margin-bottom: 30px; }
+		.text-link { color: #111; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; text-decoration: none; border-bottom: 1px solid #111; width: fit-content; }
+		.shop-section { background: #fff; }
+		.product-image { background: #eeeae6; }
+		.product-image img { object-fit: cover; }
+		.register-band { padding: 90px 20px; background: #171717; color: #fff; }
+		.register-band .registration-wrapper { margin: 0 auto; }
+		.register-band label { color: #fff; }
+		.register-band input { color: #fff; border-bottom-color: #777; }
+		.register-band input:focus { background: #222; border-bottom-color: #fff; }
+		.register-band .brand-section .subtitle, .register-band .tagline, .register-band .terms-text, .register-band .signin-text { color: #bbb; }
+		.register-band .divider, .register-band .form-divider, .register-band .signin-section { border-color: #555; background-color: #555; }
+		.register-band .terms-text a, .register-band .signin-text a { color: #fff; border-color: #fff; }
+		@media (max-width: 700px) { .editorial { grid-template-columns: 1fr; } .editorial img { min-height: 420px; } .editorial-copy { min-height: 380px; } }
+	</style>
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header>
-        <div class="header-container">
-            <div class="brand-logo">
-                XIVO∅
-                <span class="brand-tagline">Luxury Fashion</span>
-            </div>
-            <nav class="nav-links">
-                <a href="#" data-page="home">Home</a>
-                <a href="#" data-page="shop">Shop</a>
-                <a href="#" data-page="about">About</a>
-                <a href="#" data-page="register">Register</a>
-                <a href="#" data-page="signin">Sign In</a>
-            </nav>
-        </div>
-    </header>
+	<header>
+		<div class="header-container">
+			<a class="brand-logo" href="#home">XIVO<span class="brand-tagline">SEVENTEEN° SATELLITES™</span></a>
+			<nav class="nav-links">
+				<a href="#collection">Collection</a>
+				<a href="#story">Story</a>
+				<a href="#register">Register</a>
+			</nav>
+		</div>
+	</header>
 
-    <!-- Main Content Area -->
-    <main>
-        <!-- ====== HOME PAGE ====== -->
-        <div id="home" class="page active">
-            <div class="hero">
-                <div class="hero-content">
-                    <h1>XIVO∅</h1>
-                    <p>Discover Luxury, Define Style</p>
-                    <button class="hero-button" onclick="showPage('shop'); return false;">Explore Collection</button>
-                </div>
-            </div>
-        </div>
+	<main>
+		<section class="hero image-hero" id="home">
+			<img src="https://xivo-fashion-assets-vishalsharmat15.s3.us-east-1.amazonaws.com/banners/xivo-hero.jpg" alt="XIVO jewellery editorial campaign">
+			<div class="hero-content">
+				<h1>XIVO</h1>
+				<p>Quiet form. Strong presence. A new language for modern luxury.</p>
+				<a class="hero-button" href="#collection">View the collection</a>
+			</div>
+		</section>
 
-        <!-- ====== SHOP PAGE ====== -->
-        <div id="shop" class="page">
-            <section class="shop-section">
-                <div class="container">
-                    <div class="shop-header">
-                        <h1>Our Collections</h1>
-                        <p>Handcrafted luxury pieces for the discerning individual</p>
-                    </div>
+		<section class="editorial" id="story">
+			<img src="https://xivo-fashion-assets-vishalsharmat15.s3.us-east-1.amazonaws.com/banners/xivo-jewellery-editorial.jpg" alt="XIVO jewellery editorial portrait">
+			<div class="editorial-copy">
+				<h2>SEVENTEEN°<br>SATELLITES™</h2>
+				<p>Objects for the in-between hours: considered silhouettes, tactile materials, and a point of view that does not ask for permission.</p>
+				<a class="text-link" href="#collection">Discover the edit</a>
+			</div>
+		</section>
 
-                    <div class="products-grid">
-                        <!-- Product 1 -->
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://via.placeholder.com/280x350/f5f5f5/999?text=Silk+Dress" alt="Silk Evening Dress">
-                            </div>
-                            <div class="product-name">Silk Evening Dress</div>
-                            <div class="product-price">₹45,000</div>
-                            <button class="product-btn" onclick="alert('Add to cart functionality coming soon')">Add to Cart</button>
-                        </div>
+		<section class="shop-section" id="collection">
+			<div class="container">
+				<div class="shop-header">
+					<h1>The Collection</h1>
+					<p>Essential forms for every orbit.</p>
+				</div>
+				<div class="products-grid">
+					<article class="product-card"><div class="product-image"><img src="https://xivo-fashion-assets-vishalsharmat15.s3.us-east-1.amazonaws.com/products/xivo-white-tee.png" alt="XIVO white tee"></div><div class="product-name">Essential White Tee</div><div class="product-price">₹4,500</div><button class="product-btn" type="button">View piece</button></article>
+					<article class="product-card"><div class="product-image"><img src="https://xivo-fashion-assets-vishalsharmat15.s3.us-east-1.amazonaws.com/products/xivo-white-tank.png" alt="XIVO white tank top"></div><div class="product-name">Studio Tank</div><div class="product-price">₹5,200</div><button class="product-btn" type="button">View piece</button></article>
+					<article class="product-card"><div class="product-image"><img src="https://xivo-fashion-assets-vishalsharmat15.s3.us-east-1.amazonaws.com/products/xivo-denim-look.png" alt="XIVO denim look"></div><div class="product-name">Wide Leg Denim</div><div class="product-price">₹9,800</div><button class="product-btn" type="button">View piece</button></article>
+					<article class="product-card"><div class="product-image"><img src="https://xivo-fashion-assets-vishalsharmat15.s3.us-east-1.amazonaws.com/products/xivo-black-look.png" alt="XIVO black look"></div><div class="product-name">After Dark Trouser</div><div class="product-price">₹12,500</div><button class="product-btn" type="button">View piece</button></article>
+				</div>
+			</div>
+		</section>
 
-                        <!-- Product 2 -->
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://via.placeholder.com/280x350/f5f5f5/999?text=Leather+Jacket" alt="Premium Leather Jacket">
-                            </div>
-                            <div class="product-name">Premium Leather Jacket</div>
-                            <div class="product-price">₹65,000</div>
-                            <button class="product-btn" onclick="alert('Add to cart functionality coming soon')">Add to Cart</button>
-                        </div>
+		<section class="register-band" id="register">
+			<div class="registration-wrapper">
+				<form class="registration-form" action="action_page.php" method="post">
+					<div class="brand-section"><div class="subtitle">Private access</div><h1>Join XIVO</h1><div class="divider"></div><p class="tagline">Register for collection releases and studio notes.</p></div>
+					<div class="form-group"><label for="Name">Full Name</label><input type="text" id="Name" name="Name" placeholder="Enter your full name" required></div>
+					<div class="form-group"><label for="mobile">Mobile Number</label><input type="text" id="mobile" name="mobile" placeholder="Enter mobile number" required></div>
+					<div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="Enter email address" required></div>
+					<div class="form-group"><label for="psw">Password</label><input type="password" id="psw" name="psw" placeholder="Enter password" required></div>
+					<div class="form-group"><label for="psw-repeat">Confirm Password</label><input type="password" id="psw-repeat" name="psw-repeat" placeholder="Repeat password" required></div>
+					<div class="form-divider"></div>
+					<p class="terms-text">By creating an account, you agree to our <a href="#">Terms &amp; Privacy Policy</a>.</p>
+					<button type="submit" class="register-btn">Register</button>
+					<div class="signin-section"><p class="signin-text">Already have an account? <a href="#">Sign in</a>.</p></div>
+				</form>
+			</div>
+		</section>
+	</main>
 
-                        <!-- Product 3 -->
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://via.placeholder.com/280x350/f5f5f5/999?text=Luxury+Handbag" alt="Luxury Handbag">
-                            </div>
-                            <div class="product-name">Luxury Handbag</div>
-                            <div class="product-price">₹38,000</div>
-                            <button class="product-btn" onclick="alert('Add to cart functionality coming soon')">Add to Cart</button>
-                        </div>
-
-                        <!-- Product 4 -->
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://via.placeholder.com/280x350/f5f5f5/999?text=Designer+Heels" alt="Designer Heels">
-                            </div>
-                            <div class="product-name">Designer Heels</div>
-                            <div class="product-price">₹22,000</div>
-                            <button class="product-btn" onclick="alert('Add to cart functionality coming soon')">Add to Cart</button>
-                        </div>
-
-                        <!-- Product 5 -->
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://via.placeholder.com/280x350/f5f5f5/999?text=Luxury+Watch" alt="Luxury Watch">
-                            </div>
-                            <div class="product-name">Luxury Watch</div>
-                            <div class="product-price">₹95,000</div>
-                            <button class="product-btn" onclick="alert('Add to cart functionality coming soon')">Add to Cart</button>
-                        </div>
-
-                        <!-- Product 6 -->
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://via.placeholder.com/280x350/f5f5f5/999?text=Cashmere+Scarf" alt="Cashmere Scarf">
-                            </div>
-                            <div class="product-name">Cashmere Scarf</div>
-                            <div class="product-price">₹18,000</div>
-                            <button class="product-btn" onclick="alert('Add to cart functionality coming soon')">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ====== ABOUT PAGE ====== -->
-        <div id="about" class="page">
-            <section class="about-section">
-                <div class="about-header">
-                    <h1>About XIVO∅</h1>
-                </div>
-                <div class="about-content">
-                    <p>
-                        XIVO∅ represents the epitome of luxury fashion, where timeless elegance meets contemporary design. 
-                        Our brand is built on the foundation of quality, craftsmanship, and an unwavering commitment to excellence.
-                    </p>
-                    <p>
-                        Each piece in our collection is meticulously curated and crafted by master artisans who bring decades 
-                        of experience to their work. We believe that luxury is not merely about price, but about the story, 
-                        heritage, and passion that goes into creating something truly exceptional.
-                    </p>
-                    <p>
-                        From the finest materials sourced globally to the intricate details of production, every element is 
-                        carefully considered. Our vision is to empower individuals to express their unique style while maintaining 
-                        the highest standards of quality and sophistication.
-                    </p>
-                    <p>
-                        Join us on a journey where luxury transcends materialism, and becomes a lifestyle—a celebration of 
-                        individuality, taste, and the art of living beautifully.
-                    </p>
-                </div>
-            </section>
-        </div>
-
-        <!-- ====== REGISTER PAGE ====== -->
-        <div id="register" class="page">
-            <div class="registration-wrapper">
-                <form class="registration-form" action="action_page.php" id="registrationForm">
-                    <!-- Brand Section -->
-                    <div class="brand-section">
-                        <div class="subtitle">Join Our Community</div>
-                        <h1>Create Account</h1>
-                        <div class="divider"></div>
-                        <p class="tagline">Access exclusive collections and early releases</p>
-                    </div>
-
-                    <!-- Form Fields -->
-                    <div class="form-group">
-                        <label for="Name">Full Name</label>
-                        <input type="text" id="Name" name="Name" placeholder="Enter your full name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mobile">Mobile Number</label>
-                        <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Enter email address" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="psw">Password</label>
-                        <input type="password" id="psw" name="psw" placeholder="Enter password" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="psw-repeat">Confirm Password</label>
-                        <input type="password" id="psw-repeat" name="psw-repeat" placeholder="Repeat password" required>
-                    </div>
-
-                    <div class="form-divider"></div>
-
-                    <p class="terms-text">
-                        By creating an account, you agree to our <a href="#" onclick="return false;">Terms & Privacy Policy</a>
-                    </p>
-
-                    <button type="submit" class="register-btn">Create Account</button>
-
-                    <!-- Sign In Section -->
-                    <div class="signin-section">
-                        <p class="signin-text">
-                            Already have an account? <a href="#" data-page="signin" onclick="showPage('signin'); return false;">Sign in</a>
-                        </p>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- ====== SIGN IN PAGE ====== -->
-        <div id="signin" class="page">
-            <div class="registration-wrapper">
-                <form class="registration-form" action="action_page.php" id="signinForm">
-                    <!-- Brand Section -->
-                    <div class="brand-section">
-                        <div class="subtitle">Welcome Back</div>
-                        <h1>Sign In</h1>
-                        <div class="divider"></div>
-                        <p class="tagline">Access your XIVO∅ account</p>
-                    </div>
-
-                    <!-- Form Fields -->
-                    <div class="form-group">
-                        <label for="signin-email">Email Address</label>
-                        <input type="email" id="signin-email" name="email" placeholder="Enter email address" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="signin-psw">Password</label>
-                        <input type="password" id="signin-psw" name="password" placeholder="Enter password" required>
-                    </div>
-
-                    <div class="form-divider"></div>
-
-                    <button type="submit" class="signin-btn">Sign In</button>
-
-                    <!-- Register Section -->
-                    <div class="signin-section">
-                        <p class="signin-text">
-                            Don't have an account? <a href="#" onclick="showPage('register'); return false;">Create one now</a>
-                        </p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#" onclick="showPage('home'); return false;">Home</a>
-                <a href="#" onclick="showPage('shop'); return false;">Shop</a>
-                <a href="#" onclick="showPage('about'); return false;">About</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Contact</a>
-            </div>
-            <p>&copy; 2024 XIVO∅ - Luxury Fashion. All rights reserved.</p>
-            <p>Crafted with excellence | Made for the discerning</p>
-        </div>
-    </footer>
-
-    <script src="js/navigation.js"></script>
-    <script>
-        // Form submission handling
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your backend integration here
-            alert('Registration submitted! (Backend integration coming soon)');
-            // this.submit(); // Uncomment to actually submit to action_page.php
-        });
-
-        document.getElementById('signinForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your backend integration here
-            alert('Sign in submitted! (Backend integration coming soon)');
-            // this.submit(); // Uncomment to actually submit to action_page.php
-        });
-    </script>
+	<footer><div class="footer-content"><div class="footer-links"><a href="#home">Home</a><a href="#collection">Collection</a><a href="#story">Story</a><a href="#register">Register</a></div><p>© XIVO - SEVENTEEN° SATELLITES™</p></div></footer>
 </body>
 </html>
