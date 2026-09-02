@@ -41,6 +41,7 @@
 				<a href="#collection">Collection</a>
 				<a href="#story">Story</a>
 				<a href="#register">Register</a>
+				<a href="admin/users">Admin</a>
 			</nav>
 		</div>
 	</header>
