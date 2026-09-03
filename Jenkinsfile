@@ -104,5 +104,19 @@ pipeline {
     }
 
   }
+
+  post {
+    always {
+      emailext(
+        to: '$DEFAULT_RECIPIENTS',
+        subject: "${currentBuild.currentResult}: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+        body: """<p>Build result: <b>${currentBuild.currentResult}</b></p>
+<p>Job: ${env.JOB_NAME}<br/>
+Build: #${env.BUILD_NUMBER}<br/>
+URL: <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a></p>""",
+        mimeType: 'text/html'
+      )
+    }
+  }
 }
 
