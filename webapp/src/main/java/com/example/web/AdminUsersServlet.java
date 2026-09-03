@@ -27,6 +27,13 @@ public class AdminUsersServlet extends HttpServlet {
     String sql = "SELECT id, name, mobile, email, created_at FROM public.users ORDER BY created_at DESC";
     String secureDatabaseUrl = databaseUrl.contains("sslmode=")
       ? databaseUrl : databaseUrl + (databaseUrl.contains("?") ? "&" : "?") + "sslmode=require";
+    try {
+      Class.forName("org.postgresql.Driver");
+    } catch (ClassNotFoundException exception) {
+      log("PostgreSQL JDBC driver is not available", exception);
+      response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database driver is not available.");
+      return;
+    }
     try (Connection connection = DriverManager.getConnection(secureDatabaseUrl, databaseUser, databasePassword);
         PreparedStatement statement = connection.prepareStatement(sql);
         ResultSet results = statement.executeQuery()) {

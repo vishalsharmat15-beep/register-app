@@ -66,6 +66,7 @@ public class RegisterServlet extends HttpServlet {
   private void saveUser(String url, String user, String password, String name, String mobile,
       String email, String passwordHash) throws SQLException {
     String sql = "INSERT INTO users (name, mobile, email, password_hash) VALUES (?, ?, ?, ?)";
+    loadPostgresDriver();
     try (Connection connection = DriverManager.getConnection(url, user, password);
         PreparedStatement statement = connection.prepareStatement(sql)) {
       statement.setString(1, name);
@@ -73,6 +74,14 @@ public class RegisterServlet extends HttpServlet {
       statement.setString(3, email);
       statement.setString(4, passwordHash);
       statement.executeUpdate();
+    }
+  }
+
+  private void loadPostgresDriver() throws SQLException {
+    try {
+      Class.forName("org.postgresql.Driver");
+    } catch (ClassNotFoundException exception) {
+      throw new SQLException("PostgreSQL JDBC driver is not available.", exception);
     }
   }
 
