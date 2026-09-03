@@ -24,7 +24,7 @@ public class AdminUsersServlet extends HttpServlet {
 
     response.setContentType("text/html;charset=UTF-8");
     response.getWriter().write("<!doctype html><html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Fashion Signup App | Customer Register</title><style>body{margin:0;background:#f2efeb;color:#171717;font-family:Georgia,serif}main{max-width:1100px;margin:0 auto;padding:60px 24px}header{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid #bbb;padding-bottom:20px;margin-bottom:30px}h1{font-size:42px;font-weight:400;letter-spacing:4px;margin:0}a{color:#171717}table{width:100%;border-collapse:collapse;background:#fff}th,td{text-align:left;padding:18px;border-bottom:1px solid #ddd}th{font-size:11px;letter-spacing:2px;text-transform:uppercase}td{font-size:14px}p{color:#666}@media(max-width:700px){main{padding:35px 14px}h1{font-size:28px}table{display:block;overflow-x:auto;white-space:nowrap}}</style></head><body><main><header><div><p>XIVO / PRIVATE STUDIO</p><h1>Customer Register</h1></div><a href=\"../index.jsp#home\">Back to site</a></header><p>Registered customers</p><table><tr><th>ID</th><th>Name</th><th>Mobile</th><th>Email</th><th>Created</th></tr>");
-    String sql = "SELECT id, name, mobile, email, created_at FROM public.users ORDER BY created_at DESC";
+    String sql = "SELECT id, name, mobile, email, created_at FROM public.users ORDER BY created_at DESC, id DESC";
     String secureDatabaseUrl = databaseUrl.contains("sslmode=")
       ? databaseUrl : databaseUrl + (databaseUrl.contains("?") ? "&" : "?") + "sslmode=require";
     try {
