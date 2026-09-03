@@ -10,8 +10,6 @@ pipeline {
     DOCKER_CREDENTIALS = credentials('DocketHub')
     IMAGE_NAME = "${DOCKER_CREDENTIALS_USR}/${APP_NAME}"
     IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-    JENKINS_API_TOKEN = credentials("JENKINS_API_TOKEN")
-  
   }
   stages {
     stage ("Clean Workspace"){
@@ -90,15 +88,17 @@ pipeline {
           }
         }
 
-    stage("Trigger Deployment Job") {
+    stage("Update GitOps Helm Values") {
       steps {
         script {
-              sh """curl -v -k \
-                --user Jenkins-User:${JENKINS_API_TOKEN} \
-                -X POST \
-                -H 'Content-Type: application/x-www-form-urlencoded' \
-                --data 'IMAGE_TAG=${IMAGE_TAG}' \
-                'http://10.0.0.141:8080/job/Fashion-Signup-App%20CD/buildWithParameters?token=gitops-token'"""        
+          dir('gitops-register-app') {
+            git branch: 'main', credentialsId: 'github', url: 'https://github.com/vishalsharmat15-beep/gitops-register-app.git'
+            sh "sed -i 's/^  tag: .*/  tag: \"${IMAGE_TAG}\"/' values.yaml"
+            sh "git config user.name 'Jenkins' && git config user.email 'jenkins@localhost'"
+            withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+              sh "git add values.yaml && git diff --cached --quiet || (git commit -m 'Update image to ${IMAGE_TAG}' && git push origin main)"
+            }
+          }
         }
       }
     }
